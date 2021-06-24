@@ -13,8 +13,9 @@ Testing various GPIO functions on Jetson AGX Xavier
 
 ## Setup
 
+    Setup venv with python 3.7.1
 
-    $ pip install adafruit-circuitpython-vl53l0x
+    $ pip install adafruit-circuitpython-busdevice
     $ pip install adafruit-circuitpython-vl53l0x
 
 
