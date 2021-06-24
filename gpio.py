@@ -2,14 +2,18 @@ import board
 from digitalio import DigitalInOut, Direction, Pull
 import busio
 from adafruit_vl53l0x import VL53L0X
+import pwmio
 
 import time
 
 
-
+# LED ########################################################################################
 led = DigitalInOut(board.D4)
 led.direction = Direction.OUTPUT
 
+
+
+# VL53 #######################################################################################
 i2c_bus = busio.I2C(board.SCL, board.SDA)
 vl53 = []
 
@@ -18,7 +22,7 @@ sensor_settings = [ [29, DigitalInOut(board.D20)],
 
 
 for i in range(len(sensor_settings)):
-    print(f"Settings for sensor 1: {sensor_settings[i][0]} {sensor_settings[i][1].}")
+    print(f"Settings for sensor 1: {sensor_settings[i][0]} {sensor_settings[i][1].value}")
 
 for i in range(len(sensor_settings)):
     print(f"Switching pin {i} to output")
@@ -32,6 +36,11 @@ for i in range(len(sensor_settings)):
     
     print(f"Sensor {i} address: {sensor_settings[i][0]}")
     vl53[-1].set_address(sensor_settings[i][0])
+
+# PWM ########################################################################################
+pwm = pwmio.PEMOut(board.D13)
+pwm.duty_cycle = 50
+
 
 led_state = False
 time.sleep(5)
