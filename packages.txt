@@ -1,0 +1,11 @@
+Adafruit-Blinka==6.10.2
+adafruit-circuitpython-busdevice==5.0.6
+adafruit-circuitpython-rplidar==1.2.1
+adafruit-circuitpython-vl53l0x==3.3.7
+Adafruit-PlatformDetect==3.14.0
+Adafruit-PureIO==1.1.9
+certifi==2018.10.15
+Jetson.GPIO==2.0.17
+pyftdi==0.53.1
+pyserial==3.5
+pyusb==1.1.1
